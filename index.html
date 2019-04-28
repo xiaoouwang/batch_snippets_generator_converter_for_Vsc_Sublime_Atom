@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Batch Snippets Converter</title>
+    <!-- <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="assets/css/custom.css"> -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1>Batch Snippets Converter</h1>
+
+<div id="main">
+  <!-- left side -->
+    <div class="container">
+      <div class="original">
+        <h2>Input or paste your raw code according to the conventions stated above</h2>
+        <fieldset>
+        <form action="#" id="original-form">
+          <label for="tweet"></label>
+          <textarea id="raw-code"></textarea>
+          <input type="submit" value="CONVERT" />
+        </form>
+        </fieldset>
+      </div>
+
+    <!-- center with convert and paste button -->
+   <div class="button">
+</br></br></br></br></br></br></br></br></br></br>
+      <input type="submit" value="CONVERT" form = "original-form" /></br>
+</br></br></br></br></br></br></br></br></br></br>
+      <button id = "copy-to-clipboard">COPY</button>
+    </div>
+  <!-- right side -->
+
+            <div class="converted">
+                <h2>Snippets for visual studio code</h2>
+               <textarea id="converted-code" ></textarea>
+            </div>
+    </div>
+</div> <!--#contenido-->
+
+<script src="https://unpkg.com/common-tags"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
