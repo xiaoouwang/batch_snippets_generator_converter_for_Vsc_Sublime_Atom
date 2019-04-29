@@ -13,60 +13,72 @@
 </head>
 
 <body>
-<br>
+  <br>
   <h1>Snippets Converter/also named Kongfu snippets converting master</h1>
-  <h2 align="justify">This deliberately <span style="color:maroon">ugly</span> website is created for batch creating or generating snippets in </h2>
+  <h2 align="justify">This deliberately <span style="color:maroon">ugly</span> website is created for batch creating or
+    generating snippets in </h2>
   <h2 style="color:blue;">visual studio code (also named vsc), sublime text and atom.</h2>
-  <h3>For editor to editor conversion, it's very important to follow the editor's default format but with tab = 2 spaces</h3>
-  <h3>Raw code conventions (click <button id="test">ConvertToVsc</button> to see how it works)</h3>
+  <h2 style="color:red;font-weight: 800px;">Please READ</h2>
+  <h3>For editor to editor conversion, it's very important to follow the editor's default format. For atoms snippets conversion to other editors, it's important to specify. The number of spaces before the first line of snippet's body(by default 4 spaces, could be adjusted to 6 spaces)</h3>
+  <h3>(click <button id="test">ConvertToVsc</button> to see how it works)</h3>
+  <h3>Raw code conventions</h3>
   <div class="convention">
-      <p># prefix</p>
-      <p>trigger</p>
-      <p style="margin-bottom:0px;">code</p>
+    <p># prefix</p>
+    <p>trigger</p>
+    <p style="margin-bottom:0px;">code</p>
   </div>
   <div id="main" style="margin-top:0px;">
     <!-- left side -->
     <div class="container">
       <div class="original">
         <h4>Input or paste your raw code according to the conventions stated above</h4>
-          <form action="#" id="original-form">
-            <label for="tweet"></label>
-            <textarea id="raw-code"></textarea>
-          </form>
+        <br>
+        <form action="#" id="original-form">
+          <label for="tweet"></label>
+          <textarea id="raw-code"></textarea>
+        </form>
       </div>
 
       <!-- center with convert and paste button -->
       <div class="button">
-        <a href="https://www.paypal.com/pools/c/8ehSzoxnWu" target = "_blank"><img width="200px" height="80px"  src = "coffee.png" alt = "buy me a coffee"> </a>
-        <br>
+        <br><br><br><br>
         <button id="vsc">ConvertToVsc</button>
         <button id="sublime">ConverToSublime</button>
         <button id="atom">ConvertToAtom</button>
         <br>
-        <button id="vsc-sublime" style = "background-color: green;">VscToSublime</button>
-        <button id="vsc-atom" style = "background-color: green;">VscToAtom</button>
+        <button id="vsc-sublime" style="background-color: green;">VscToSublime</button>
+        <button id="vsc-atom" style="background-color: green;">VscToAtom</button>
         <br>
-        <button id="sublime-vsc" style = "background-color: skyblue;">SublimeToVsc</button>
-        <button id="sublime-atom" style = "background-color: skyblue;">SublimeToAtom</button>
+        <button id="sublime-vsc" style="background-color: skyblue;">SublimeToVsc</button>
+        <button id="sublime-atom" style="background-color: skyblue;">SublimeToAtom</button>
         <br>
-        <button id="atom-vsc" style = "background-color: sienna;">AtomToVsc</button>
-        <button id="atom-sublime" style = "background-color: sienna;">AtomToSublime</button>
+        <button id="atom-vsc" style="background-color: sienna;">AtomToVsc</button>
+        <button id="atom-sublime" style="background-color: sienna;">AtomToSublime</button>
         <br>
-        <button id="right-to-left" style = "background-color: #F05836;"">copyRightToLeft</button>
+        <button id="right-to-left" style="background-color: #F05836;"">copyRightToLeft</button>
         <button id="copy" style="background-color: #F05836;">CopyRightWindow</button>
+        <br>
+        <br>
+        <a class="github"
+          href="https://github.com/xiaoouwang/batch_snippets_generator_converter_for_Vsc_Sublime_Atom">Github Link for
+          submit issues and bugs</a>
+        <a href="https://www.paypal.com/pools/c/8ehSzoxnWu" target="_blank"><img width="200px" height="60px"
+            src="coffee.png" alt="buy me a coffee"> </a>
       </div>
-          <!-- right side -->
+      <!-- right side -->
 
       <div class="converted">
-            <h4>Click copy to get your converted snippets</h4>
-
-            <textarea id="converted-code"></textarea>
+        <h4>Click copy to get your converted snippets</h4>
+        <p>|..The below option is for atom snippets conversion not for generation..|</p>
+          <input class = "tab" type="radio" name="tab" value="4" checked>space before body = 4 spaces<br>
+          <input class = "tab" type="radio" name="tab" value="6">space before body = 6 spaces
+        <textarea id="converted-code"></textarea>
       </div>
       <!--#contenido-->
     </div>
 
-      <script src="https://unpkg.com/common-tags"></script>
-      <script src="assets/js/app.js"></script>
+    <script src="https://unpkg.com/common-tags"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

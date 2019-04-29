@@ -1,6 +1,8 @@
 //// Variables
 // import { html } from 'common-tags';
 // convertedCode =
+let checkedValue = document.querySelector('.tab:checked').value;
+console.log(checkedValue);
 let newCodeArea = document.getElementById("converted-code");
 let oldCodeArea = document.getElementById("raw-code");
 //// Event listeners
@@ -35,6 +37,8 @@ function copyRightToLeft() {
 }
 
 function atomTransform(event) {
+  let verifiedValue = document.querySelector('.tab:checked').value;
+  console.log("hehe" + verifiedValue);
   let rawCodeVsc = document.getElementById('raw-code').value;
   let rawCodeZone = document.getElementById('raw-code');
   let eventId = event.target.id
@@ -60,25 +64,45 @@ function atomTransform(event) {
   // get various segments
   for (let i = 0; i < beginningAndEnd.length; i+=2) {
       // get description
+        console.log("hehe"+checkedValue);
         description = separatedSnippets[beginningAndEnd[i]].slice(1,-2) +"\n";
         // get prefix with search
         prefix = separatedSnippets[beginningAndEnd[i]+1].slice(separatedSnippets[beginningAndEnd[i]+1].indexOf("prefix")+10,-1) + "\n";
         // process and add body (remove double quotes and comma)
+        // if (document.querySelector('.tab').checked) {
+        // checkedValue = document.querySelector('.tab:checked').value;
+        // }
+
+        // console.log("hehe" + checkedValue);
         for (let j = beginningAndEnd[i]+3; j < beginningAndEnd[i+1]; j++) {
           // remove leading white spaces
-          separatedSnippets[j] = separatedSnippets[j].replace(/^\s{4}/g,"");
+          // console.log(separatedSnippets[beginningAndEnd[i]+3].startsWith("    "));
+          // console.log(separatedSnippets[beginningAndEnd[i]+3].startsWith("      "))
+          // if (separatedSnippets[beginningAndEnd[i]+3].startsWith("    ")) {
+            if (verifiedValue==="4") {
+            separatedSnippets[j] = separatedSnippets[j].replace(/^\s{4}/g,"");}
+            if (verifiedValue==="6") {
+          // } else if (separatedSnippets[beginningAndEnd[i]+3].startsWith("      ")) {
+            separatedSnippets[j] = separatedSnippets[j].replace(/^\s{6}/g,"");}
+          // }
+          // console.log(separatedSnippets);
         }
-        console.log(separatedSnippets);
         body = separatedSnippets.slice(beginningAndEnd[i]+3,beginningAndEnd[i+1]).join("\n");
-        console.log(body);
+        // console.log(body);
         // if (beginningAndEnd.length === 4) {
         //   rawCodeZone.value += "# " + description + prefix + body;
         // } else {
         //   rawCodeZone.value += "# " + description + prefix + body + "\n";}
         // add convert back to raw code
-        rawCodeZone.value += "# " + description + prefix + body + "\n";
-        pasteToRight(event);
+        // check if it's the last line
+        if (i === beginningAndEnd.length-2) {
+          rawCodeZone.value += "# " + description + prefix + body;
+        } else {
+          rawCodeZone.value += "# " + description + prefix + body + "\n";
+        }
   }
+        pasteToRight(event);
+
 }
 
 function sublimeTransform(event) {
@@ -128,7 +152,13 @@ function sublimeTransform(event) {
         // if (beginningAndEnd.length === 4) {
         //   rawCodeZone.value += "# " + description + prefix + body;
         // } else {
+                  // check if it's the last line
+        if (i === beginningAndEnd.length-4) {
+          rawCodeZone.value += "# " + description + prefix + body;
+        } else {
           rawCodeZone.value += "# " + description + prefix + body + "\n";
+        }
+          // rawCodeZone.value += "# " + description + prefix + body + "\n";
         pasteToRight(event);
   }
 }
@@ -154,7 +184,7 @@ function vscTransform(event) {
       beginningAndEnd.push(i);
     }
   }
-  console.log(beginningAndEnd);
+  // console.log(beginningAndEnd);
   for (let i = 0; i < beginningAndEnd.length; i+=2) {
       // get description
         description = separatedSnippets[beginningAndEnd[i]].slice(1,-4) +"\n";
@@ -174,9 +204,15 @@ function vscTransform(event) {
         // if (beginningAndEnd.length === 4) {
         //   rawCodeZone.value += "# " + description + prefix + body;
         // } else {
-          rawCodeZone.value += "# " + description + prefix + body + "\n";
+          // rawCodeZone.value += "# " + description + prefix + body + "\n";
         // add convert back to raw code
         // rawCodeZone.value += "# " + description + prefix + body + "\n";
+                // check if it's the last line
+        if (i === beginningAndEnd.length-2) {
+          rawCodeZone.value += "# " + description + prefix + body;
+        } else {
+          rawCodeZone.value += "# " + description + prefix + body + "\n"; }
+        // }
         pasteToRight(event);
   }
 }
