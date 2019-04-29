@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Batch Snippets Converter</title>
-    <!-- <link rel="stylesheet" href="assets/css/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Batch Snippets Converter</title>
+  <!-- <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/skeleton.css">
     <link rel="stylesheet" href="assets/css/custom.css"> -->
-    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-
-<h1>Batch Snippets Converter</h1>
-
-<div id="main">
-  <!-- left side -->
+<br>
+  <h1>Batch Snippets Converter</h1>
+  <h2 align="justify">This deliberately <span style="color:maroon">ugly</span> website is created for batch creating or generating snippets in </h2>
+  <h2 style="color:blue;">visual studio code (also named vsc), sublime text and atom.</h2>
+  <h3>For editor to editor conversion, it's very important to follow the editor's default format but with tab = 2 spaces</h3>
+  <h3>Raw code conventions (click <button id="test">ConvertToVsc</button> to see how it works)</h3>
+  <div class="convention">
+      <p># prefix</p>
+      <p>trigger</p>
+      <p style="margin-bottom:0px;">code</p>
+  </div>
+  <div id="main" style="margin-top:0px;">
+    <!-- left side -->
     <div class="container">
       <div class="original">
-        <h2>Input or paste your raw code according to the conventions stated above</h2>
-        <fieldset>
-        <form action="#" id="original-form">
-          <label for="tweet"></label>
-          <textarea id="raw-code"></textarea>
-          <input type="submit" value="CONVERT" />
-        </form>
-        </fieldset>
+        <h4>Input or paste your raw code according to the conventions stated above</h4>
+          <form action="#" id="original-form">
+            <label for="tweet"></label>
+            <textarea id="raw-code"></textarea>
+          </form>
       </div>
 
-    <!-- center with convert and paste button -->
-   <div class="button">
-</br></br></br></br></br></br></br></br></br></br>
-      <input type="submit" value="CONVERT" form = "original-form" /></br>
-</br></br></br></br></br></br></br></br></br></br>
-      <button id = "copy-to-clipboard">COPY</button>
-    </div>
-  <!-- right side -->
+      <!-- center with convert and paste button -->
+      <div class="button">
+        <a href="https://www.paypal.com/pools/c/8ehSzoxnWu" target = "_blank"><img width="200px" height="80px"  src = "coffee.png" alt = "buy me a coffee"> </a>
+        <br>
+        <button id="vsc">ConvertToVsc</button>
+        <button id="sublime">ConverToSublime</button>
+        <button id="atom">ConvertToAtom</button>
+        <br>
+        <button id="vsc-sublime" style = "background-color: green;">VscToSublime</button>
+        <button id="vsc-atom" style = "background-color: green;">VscToAtom</button>
+        <br>
+        <button id="sublime-vsc" style = "background-color: skyblue;">SublimeToVsc</button>
+        <button id="sublime-atom" style = "background-color: skyblue;">SublimeToAtom</button>
+        <br>
+        <button id="atom-vsc" style = "background-color: sienna;">AtomToVsc</button>
+        <button id="atom-sublime" style = "background-color: sienna;">AtomToSublime</button>
+        <br>
+        <button id="right-to-left" style = "background-color: #F05836;"">copyRightToLeft</button>
+        <button id="copy" style="background-color: #F05836;">CopyRightWindow</button>
+      </div>
+          <!-- right side -->
 
-            <div class="converted">
-                <h2>Snippets for visual studio code</h2>
-               <textarea id="converted-code" ></textarea>
-            </div>
-    </div>
-</div> <!--#contenido-->
+      <div class="converted">
+            <h4>Click copy to get your converted snippets</h4>
 
-<script src="https://unpkg.com/common-tags"></script>
-    <script src="assets/js/app.js"></script>
+            <textarea id="converted-code"></textarea>
+      </div>
+      <!--#contenido-->
+    </div>
+
+      <script src="https://unpkg.com/common-tags"></script>
+      <script src="assets/js/app.js"></script>
 </body>
+
 </html>
