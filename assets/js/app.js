@@ -12,10 +12,12 @@ eventListeners();
 document.getElementById("raw-code").value = ` <--->This is just for demo<--->
 # description
 trigger
-body
+bodyline1
+bodyline2
 # description
 trigger
-body`;
+bodyline1
+bodyline2`;
 
 function eventListeners() {
   document.querySelector("#vsc").addEventListener("click", pasteToRight);
