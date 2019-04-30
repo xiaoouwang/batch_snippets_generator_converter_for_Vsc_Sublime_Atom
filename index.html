@@ -14,12 +14,12 @@
 
 <body>
   <br>
-  <h1>Snippets Converter/also named Kongfu snippets converting master</h1>
+  <h1>Snippets Converter/alias Kongfu snippets converting master</h1>
   <h2 align="justify">This deliberately <span style="color:maroon">ugly</span> website is created for batch creating or generating snippets in </h2>
   <h2 style="color:blue;">visual studio code (also named vsc), sublime text and atom.</h2>
   <!-- <h2 style="color:red;font-weight: 800px;">Please READ</h2>
   <h3>For editor to editor conversion, it's very important to follow the editor's default format. For atoms snippets conversion to other editors, it's important to specify. The number of spaces before the first line of snippet's body(by default 4 spaces, could be adjusted to 6 spaces)</h3> -->
-  <h3>(click <button id="test">ConvertToVsc</button> to see how it works)</h3>
+  <h3>(click <button id="test">ConvertToVsc</button> to see how it works) <a href="https://github.com/xiaoouwang/batch_snippets_generator_converter_for_Vsc_Sublime_Atom">also see manual here if any question</a></h3>
   <h3>Raw code conventions</h3>
   <div class="convention">
     <p># prefix</p>
@@ -68,9 +68,10 @@
 
       <div class="converted">
         <h4>Click copy to get your converted snippets</h4>
-        <p>|..The below option is for atom snippets conversion not for generation..|</p>
-          <input class = "tab" type="radio" name="tab" value="4" checked>space before body = 4 spaces<br>
-          <input class = "tab" type="radio" name="tab" value="6">space before body = 6 spaces
+        <p>For atom snippets conversion (not generation) it's important to specify the number of spaces before the first line of the body</p>
+          <input class = "tab" type="radio" name="tab" value="4" checked>4 spaces<br>
+          <input class = "tab" type="radio" name="tab" value="6">6 spaces
+          <input type="radio" class = "tab" name = "tab" value = "8">8 spaces
         <textarea id="converted-code"></textarea>
       </div>
       <!--#contenido-->

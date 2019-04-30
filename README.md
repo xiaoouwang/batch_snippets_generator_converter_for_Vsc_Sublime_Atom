@@ -1,6 +1,10 @@
 # snippets generator / snippets converter / batch snippets generator and batch snippets converter
 
-Note that for the snippets conversion among editors, two spaces are used for tab. An option will be added to make the converter more bug-proof.
+**Note that for the snippets conversion among editors, two spaces are considered as default for tab. However you can tweak a little bit by choose how many spaces exist before the first line of body.**
+
+**Please note that the above statements only apply to snippets conversion, not generation. The generation part relies on the following code convention**
+
+
 
 ## generate snippets for vscode (vsc), sublime text and atom with the following format
 

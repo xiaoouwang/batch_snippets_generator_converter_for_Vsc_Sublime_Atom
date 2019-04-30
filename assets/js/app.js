@@ -86,6 +86,9 @@ function atomTransform(event) {
             if (verifiedValue==="6") {
           // } else if (separatedSnippets[beginningAndEnd[i]+3].startsWith("      ")) {
             separatedSnippets[j] = separatedSnippets[j].replace(/^\s{6}/g,"");}
+            if (verifiedValue==="8") {
+          // } else if (separatedSnippets[beginningAndEnd[i]+3].startsWith("      ")) {
+            separatedSnippets[j] = separatedSnippets[j].replace(/^\s{8}/g,"");}
           // }
           // console.log(separatedSnippets);
         }
