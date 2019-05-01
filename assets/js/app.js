@@ -46,7 +46,11 @@ function atomTransform(event) {
   let eventId = event.target.id
   let separatedSnippets, separatedSnippetsLength;
   // separatedSnippetsInfo = separateLines(rawCode);
-  separatedSnippetsInfo = separateLinesOthers(rawCodeVsc);
+  if (eventId === "atom-vsc") {
+    separatedSnippetsInfo = separateLinesVsc(rawCodeVsc);
+  } else {
+    separatedSnippetsInfo = separateLinesOthers(rawCodeVsc);
+  }
   [separatedSnippets, separatedSnippetsLength] = separatedSnippetsInfo;
   // record chunks position
   let beginningAndEnd = [];
@@ -116,7 +120,12 @@ function sublimeTransform(event) {
   let eventId = event.target.id
   let separatedSnippets, separatedSnippetsLength;
   // separatedSnippetsInfo = separateLines(rawCode);
-  separatedSnippetsInfo = separateLinesOthers(rawCodeVsc);
+  if (eventId === "sublime-vsc") {
+    separatedSnippetsInfo = separateLinesVsc(rawCodeVsc);
+  } else {
+    separatedSnippetsInfo = separateLinesOthers(rawCodeVsc);
+  }
+  // separatedSnippetsInfo = separateLinesOthers(rawCodeVsc);
   [separatedSnippets, separatedSnippetsLength] = separatedSnippetsInfo;
   // record chunks position
   let beginningAndEnd = [];
@@ -175,7 +184,7 @@ function vscTransform(event) {
   let eventId = event.target.id
   let separatedSnippets, separatedSnippetsLength;
   // separatedSnippetsInfo = separateLines(rawCode);
-  separatedSnippetsInfo = separateLinesVsc(rawCodeVsc);
+  separatedSnippetsInfo = separateLinesVscTransform(rawCodeVsc);
   [separatedSnippets, separatedSnippetsLength] = separatedSnippetsInfo;
   // record chunks position
   let beginningAndEnd = [];
@@ -238,13 +247,21 @@ function separateLines(code) {
 
 function separateLinesOthers(code) {
   let separated = code
-    .replace(/\\/g, "\\\\")
+    // .replace(/\\/g, "\\\\")
     .split("\n");
   return [separated, separated.length];
 }
+
 function separateLinesVsc(code) {
   let separated = code
-    // .replace(/\\/g, "\\\\")
+    .replace(/\\/g, "\\\\")
+    .replace(/\\"/g,'"')
+    .split("\n");
+  return [separated, separated.length];
+}
+function separateLinesVscTransform(code) {
+  let separated = code
+    .replace(/\\\\/g, "\\")
     .replace(/\\"/g,'"')
     .split("\n");
   return [separated, separated.length];
